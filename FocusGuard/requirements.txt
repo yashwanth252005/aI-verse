@@ -1,0 +1,40 @@
+# FocusGuard - AI Proctoring Assistant
+# Requirements optimized for Python 3.13 + RTX 2050 + CUDA 12.2
+# Note: MediaPipe not yet available for Python 3.13 - we'll use dlib as primary
+
+# Core computer vision and ML libraries
+opencv-python>=4.9.0              # Webcam capture and image processing
+# mediapipe>=0.10.0               # NOT AVAILABLE for Python 3.13 yet
+# dlib>=19.24.0                   # Requires CMake - NOT NEEDED (using Haar Cascade)
+# face-recognition>=1.3.0         # Depends on dlib - NOT NEEDED
+ultralytics>=8.0.0                # YOLOv8 for device detection
+numpy>=1.24.0                     # Numerical operations
+pillow>=10.0.0                    # Image handling
+
+# Streamlit dashboard and visualization  
+streamlit>=1.30.0                 # Web-based dashboard UI
+plotly>=5.18.0                    # Interactive timeline charts
+matplotlib>=3.8.0                 # Static visualizations for reports
+
+# Audio processing
+librosa>=0.10.0                   # Audio feature extraction
+sounddevice>=0.4.6                # Real-time audio capture
+scipy>=1.11.0                     # Signal processing for audio
+
+# Security and encryption
+cryptography>=41.0.0              # Fernet encryption for logs
+
+# PDF report generation
+reportlab>=4.0.0                  # PDF creation for summaries
+pypdf>=4.0.0                      # PDF manipulation
+
+# Utility libraries
+python-dateutil>=2.8.0            # Timestamp handling
+pytz>=2024.1                      # Timezone support
+
+# GPU acceleration (already installed with CUDA 12.2)
+# torch==2.5.0+cu121              # PyTorch with CUDA support (if needed for future ML)
+# Note: YOLOv8 will automatically use GPU via torch backend
+
+# Development and testing
+pytest==8.3.3                     # Unit testing framework

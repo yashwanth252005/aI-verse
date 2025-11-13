@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FocusGuard Test</title>
+</head>
+<body>
+    <h1>FocusGuard Widget Test</h1>
+    <div id="status">Loading...</div>
+    <div id="output"></div>
+
+    <script src="focusguard-widget.js"></script>
+    <script>
+        document.getElementById('status').textContent = 'Widget loaded!';
+        console.log('FocusGuard object:', window.FocusGuard);
+        
+        if (window.FocusGuard) {
+            document.getElementById('output').innerHTML = '<p style="color: green;">✅ FocusGuard widget is available!</p>';
+            
+            // Try to initialize
+            try {
+                FocusGuard.init({
+                    apiUrl: 'http://localhost:8000',
+                    institutionId: 'test',
+                    examId: 'test',
+                    studentId: 'test',
+                    onSessionStart: (id) => {
+                        document.getElementById('output').innerHTML += '<p>Session started: ' + id + '</p>';
+                    }
+                });
+            } catch (e) {
+                document.getElementById('output').innerHTML += '<p style="color: red;">Error: ' + e.message + '</p>';
+            }
+        } else {
+            document.getElementById('output').innerHTML = '<p style="color: red;">❌ FocusGuard widget NOT loaded</p>';
+        }
+    </script>
+</body>
+</html>

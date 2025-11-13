@@ -1,0 +1,63 @@
+# FocusGuard .gitignore
+# Prevent sensitive and generated files from being committed to git
+
+# Python cache and bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs and databases (contains sensitive session data)
+logs/
+*.log
+*.sqlite
+*.db
+
+# Exported reports (may contain personal information)
+exports/
+*.pdf
+
+# Downloaded model weights (large files)
+models_cache/
+*.pt
+*.pth
+*.onnx
+*.h5
+
+# Test data and recordings
+sample_data/*.jpg
+sample_data/*.png
+sample_data/*.mp4
+sample_data/*.avi
+
+# Encryption keys (NEVER commit these!)
+.env
+*.key
+secrets/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Jupyter notebooks (if used for experiments)
+*.ipynb_checkpoints/
